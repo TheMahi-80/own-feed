@@ -41,8 +41,16 @@ app.get("/posts",async(req,res)=>{
     })
 })
 
-app.delete("/post-delete/:id",async(req,res)=>{
-    const id = req
+app.delete("/posts/:id",async(req,res)=>{
+    const id = req.params.id
+
+    await postModel.findOneAndDelete({
+        _id : id
+    })
+
+    res.status(200).json({
+        message : "note deleted successfully 🚮"
+    })
 })
 
 
