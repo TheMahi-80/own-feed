@@ -53,5 +53,20 @@ app.delete("/posts/:id",async(req,res)=>{
     })
 })
 
+app.patch("/posts/:id",async(req,res)=>{
+    const id = req.params.id
+    const caption = req.body.caption
+
+    await postModel.findOneAndUpdate({
+        _id:id
+    },{
+        caption  : caption 
+    })
+
+    res.status(200).json({
+        message : "caption successfully updated ✅"
+    })
+})
+
 
 module.exports= app
