@@ -1,0 +1,1 @@
+it is a demo project done by me .which will be a fullstack project .It is basically a feed... in front end there will be 2 pages one for post and another for feed .which will be managed by backend apis.
