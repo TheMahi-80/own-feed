@@ -27,9 +27,22 @@ app.post("/create-post",upload.single("image"),async(req,res)=>{
         caption : req.body.caption
     })
     return res.status(200).json({
-        message: "Posts fetched successfully ✅",
+        message: "photo and caption posted successfully ✅",
         post
     })
+})
+
+app.get("/posts",async(req,res)=>{
+    const post = await postModel.find()
+
+    res.status(200).json({
+        message : "successfully data fetched 📌",
+        post
+    })
+})
+
+app.delete("/post-delete/:id",async(req,res)=>{
+    const id = req
 })
 
 
